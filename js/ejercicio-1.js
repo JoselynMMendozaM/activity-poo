@@ -1,13 +1,22 @@
-class triangulo{
-    constructor(base, altura){
-        this.base = base;
-        this.altura = altura;
-
-        const inputElement = document.getElementById('myInput');
-        const inputObject = new inputElement.constructor(); // Create an instance of the input element's class
-        const inputValue = inputObject.value; // Access the input value
-
+class Triangle {
+    constructor(base, height) {
+      this.base = base;
+      this.height = height;
     }
-}
-
-calcularArea()
+  
+    calculateArea() {
+      return (this.base * this.height) / 2;
+    }
+  }
+  
+  function calcularArea() {
+    const base = parseFloat(document.getElementById("txtNumero1").value);
+    const height = parseFloat(document.getElementById("txtNumero2").value);
+  
+    const triangle = new Triangle(base, height);
+    const area = triangle.calculateArea();
+  
+    const resultadoElement = document.getElementById("resultado");
+    resultadoElement.textContent = `El área del triángulo es: ${area}`;
+  }
+  
